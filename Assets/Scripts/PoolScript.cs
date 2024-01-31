@@ -30,8 +30,7 @@ public class PoolScript : MonoBehaviour
     {
         GameObject tempObject; 
 
-        for(int i = 0; i < numberOfObjects; i++)
-        {
+        for(int i = 0; i < numberOfObjects; i++) {
             tempObject = Instantiate(poolPrefab, Vector3.zero, Quaternion.identity, transform);
             tempObject.SetActive(false);
             availableObjectList.Add(tempObject);
@@ -40,13 +39,31 @@ public class PoolScript : MonoBehaviour
 
     public GameObject RequestObject()
     {
-        if(availableObjectList.Count != 0)
-        {
-            return availableObjectList[0];
+        if(availableObjectList.Count != 0) {
+            GameObject requestObject = availableObjectList[0];
+            availableObjectList.Remove(requestObject);
+            activeObjectList.Add(requestObject);
+            return requestObject;
         }    
-        else
-        {
-            return null;
+
+        else {
+            CreateObject(1);
+            //El llamar a request de nuevo se llama recursión
+            return RequestObject();
         }
     }
+
+    public void Despawn(GameObject objectToDespawn) {
+        
+        objectToDespawn.SetActive(false);
+        availableObjectList.Add(objectToDespawn);
+        activeObjectList.Remove(objectToDespawn);
+
+        
+    }
+
+
+
+
+
 }

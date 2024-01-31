@@ -40,6 +40,7 @@ public class Player1 : MonoBehaviour
     private void Awake()
     {
         playerInputs = new Player_Input_Actions();
+        bulletPool = GameObject.Find("BulletPool").GetComponent<PoolScript>();
         //bulletPool = GameObject
     }
 
@@ -85,6 +86,9 @@ public class Player1 : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext context)
     {
+        GameObject bullet = bulletPool.RequestObject();
+        bullet.SetActive(true);
+        bullet.transform.position = transform.position;
         //if (context.action.activeControl != null && canShoot)
         //{
         //    string inputKey = context.control.name;
