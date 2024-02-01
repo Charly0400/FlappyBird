@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    /*[SerializeField] private float speed;
     [SerializeField] private float timeToDespawn;
     private float despawnTimer;
 
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
         Destroy(collision.gameObject);
         Destroy(gameObject);
 
-    }
+    } */
 
 
 }
