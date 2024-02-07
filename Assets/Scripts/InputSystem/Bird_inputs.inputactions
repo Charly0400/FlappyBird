@@ -1,0 +1,34 @@
+{
+    "name": "Bird_inputs",
+    "maps": [
+        {
+            "name": "Standard",
+            "id": "5bec7bd7-f7f6-4246-ac2a-393c12f3181f",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "e07c3910-da68-4c9c-9a9d-4d6735ed8e69",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e338bf7a-bb76-4b82-9fba-524d5aca236f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
